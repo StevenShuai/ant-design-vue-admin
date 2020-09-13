@@ -1,0 +1,38 @@
+<!--搜索与重置-->
+<template>
+  <div style="float: left">
+    <a-button 
+        v-if="$parent.optShow.search"
+        class="filter-item" 
+        type="primary" 
+        icon="search" 
+        @click="$parent.toQuery">
+        搜索
+    </a-button>
+    <a-button 
+        v-if="$parent.optShow.add"
+        v-permission="$parent.permission.add"
+        class="filter-item"
+        type="primary" 
+        icon="plus"
+        @click="$parent.showAddFormDialog"
+      >
+        新增
+      </a-button>
+      <a-button
+        v-if="$parent.optShow.download"
+        :loading="$parent.downloadLoading"
+        :disabled="!$parent.data.length"
+        class="filter-item"
+        type="primary"
+        icon="download"
+        @click="$parent.doDownload"
+      >
+      导出
+      </a-button>
+  </div>
+</template>
+<script>
+  export default {
+  }
+</script>

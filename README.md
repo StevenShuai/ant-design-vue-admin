@@ -1,2 +1,3 @@
 # ant-design-vue-admin
-基于ant-design-vue 的RBAC管理系统脚手架
+基于ant-design-vue 的RBAC管理系统脚手架  
+项目持续开发中...

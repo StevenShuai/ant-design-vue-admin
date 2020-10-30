@@ -1,0 +1,39 @@
+<!--搜索与重置-->
+<template>
+  <div style="float: left">
+    <a-button 
+        v-if="$parent.optShow.search"
+        class="filter-item" 
+        type="primary" 
+        icon="search" 
+        @click="$parent.toQuery">
+        {{$t('search')}}
+    </a-button>
+    <a-button 
+        v-if="$parent.optShow.add"
+        v-permission="$parent.permission.add"
+        class="filter-item"
+        type="primary" 
+        icon="plus"
+        @click="$parent.showAddFormDialog"
+      >
+        {{$t('add')}}
+      </a-button>
+      <a-button
+        v-if="$parent.optShow.download"
+        :loading="$parent.downloadLoading"
+        :disabled="!$parent.data.length"
+        class="filter-item"
+        type="primary"
+        icon="download"
+        @click="$parent.doDownload"
+      >
+      {{$t('export')}}
+      </a-button>
+  </div>
+</template>
+<script>
+  export default {
+    i18n: require('./i18n'),
+  }
+</script>
